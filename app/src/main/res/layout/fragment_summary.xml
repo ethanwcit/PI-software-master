@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.summary.SummaryFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layout_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_sleepSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:clickable="true"
+                    app:cardCornerRadius="@dimen/large_padding"
+                    app:cardElevation="@dimen/small_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateClickableBoundsCheck">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:text="Sleep"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.group20.pi_software.ui.summary.SquareLayout
+                            android:id="@+id/squareLayout3"
+                            android:layout_width="0dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                            <TextView
+                                android:id="@+id/text_sleepPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75%"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/CustomTextAppearance.Body1"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/progressRing_sleep"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.timqi.sectorprogressview.ColorfulRingProgressView
+                                android:id="@+id/progressRing_sleep"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:bgColor="@color/grey_A9"
+                                app:fgColorEnd="@color/red_orange"
+                                app:fgColorStart="@color/grey_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeWidth="20dp" />
+                        </com.group20.pi_software.ui.summary.SquareLayout>
+
+                        <TextView
+                            android:id="@+id/text_sleepSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            android:layout_marginBottom="@dimen/default_padding"
+                            android:text="5h 34min"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/squareLayout3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_studySummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:clickable="true"
+                    app:cardCornerRadius="@dimen/large_padding"
+                    app:cardElevation="@dimen/small_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_sleepSummary">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:text="Study"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.group20.pi_software.ui.summary.SquareLayout
+                            android:id="@+id/squareLayout4"
+                            android:layout_width="0dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+                            <TextView
+                                android:id="@+id/text_studyPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75%"
+                                android:textAppearance="@style/CustomTextAppearance.Body1"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/progressRing_study" />
+
+                            <com.timqi.sectorprogressview.ColorfulRingProgressView
+                                android:id="@+id/progressRing_study"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:bgColor="@color/grey_A9"
+                                app:fgColorEnd="@color/red_orange"
+                                app:fgColorStart="@color/grey_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeWidth="20dp" />
+                        </com.group20.pi_software.ui.summary.SquareLayout>
+
+                        <TextView
+                            android:id="@+id/text_studySummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            android:layout_marginBottom="@dimen/default_padding"
+                            android:text="4h 21min"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/squareLayout4" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_studySummary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_stepsSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:clickable="true"
+                    app:cardCornerRadius="@dimen/large_padding"
+                    app:cardElevation="@dimen/small_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateClickableBoundsCheck">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:text="Steps"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.group20.pi_software.ui.summary.SquareLayout
+                            android:id="@+id/squareLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                            <TextView
+                                android:id="@+id/text_stepsPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75%"
+                                android:textAppearance="@style/CustomTextAppearance.Body1"
+                                app:layout_constraintBottom_toBottomOf="@+id/progressRing_steps"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.timqi.sectorprogressview.ColorfulRingProgressView
+                                android:id="@+id/progressRing_steps"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:bgColor="@color/grey_A9"
+                                app:fgColorEnd="@color/red_orange"
+                                app:fgColorStart="@color/grey_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeWidth="20dp" />
+
+                        </com.group20.pi_software.ui.summary.SquareLayout>
+
+                        <TextView
+                            android:id="@+id/text_stepsSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            android:layout_marginBottom="@dimen/default_padding"
+                            android:text="2,543"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/squareLayout" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_workoutSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:clickable="true"
+                    app:cardCornerRadius="@dimen/large_padding"
+                    app:cardElevation="@dimen/small_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_stepsSummary">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:text="Exercise"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.group20.pi_software.ui.summary.SquareLayout
+                            android:id="@+id/squareLayout2"
+                            android:layout_width="0dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView20">
+
+                            <TextView
+                                android:id="@+id/text_workoutPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75%"
+                                android:textAppearance="@style/CustomTextAppearance.Body1"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.timqi.sectorprogressview.ColorfulRingProgressView
+                                android:id="@+id/progressRing_workout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:bgColor="@color/grey_A9"
+                                app:fgColorEnd="@color/red_orange"
+                                app:fgColorStart="@color/grey_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:strokeWidth="20dp" />
+
+                        </com.group20.pi_software.ui.summary.SquareLayout>
+
+                        <TextView
+                            android:id="@+id/text_workoutSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding"
+                            android:layout_marginEnd="@dimen/default_padding"
+                            android:layout_marginBottom="@dimen/default_padding"
+                            android:text="234 kcal"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/CustomTextAppearance.Display1"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.492"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/squareLayout2"
+                            app:layout_constraintVertical_bias="0.571" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="76dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_workoutSummary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/large_padding"
+        android:clickable="true"
+        android:contentDescription="@string/description_floatingActionButton"
+        android:focusable="true"
+        android:src="@drawable/ic_round_add_48"
+        android:backgroundTint="?attr/colorPrimary"
+        android:tint="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

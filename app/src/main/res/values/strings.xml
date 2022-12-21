@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">PI-software</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_summary">Summary</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_trend">Trend</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_prrofile_details">Details</string>
+    <string name="title_goal">Goals</string>
+    <string name="description_floatingActionButton">Add a new data point</string>
+    <string name="dialog_title">New data point</string>
+    <string name="description_closeButton">Close this sheet</string>
+    <string name="description_doneButton">Save this data</string>
+    <string name="description_spinner">Select a data type</string>
+    <string name="description_editTextDate">Select a date</string>
+    <string name="description_selectButton">Select this value</string>
+    <string name="description_editTextTime">Select time</string>
+    <string name="pd_name">Your Name</string>
+    <string name="pd_name_hint">Name</string>
+    <string name="pd_date_hint">Date</string>
+    <string name="pd_email_hint">Email Address</string>
+    <string name="pd_DoB">Date of Birth</string>
+    <string name="pd_email">Email Address</string>
+    <string name="pd_height_hint">Height</string>
+    <string name="pd_height">Your Height</string>
+    <string name="pd_weight">Your Weight</string>
+    <string name="pd_weight_hint">Weight</string>
+
+    <string-array name="data_type_names">
+        <item>Sleep Hours</item>
+        <item>Study Hours</item>
+        <item>Steps</item>
+        <item>Exercise</item>
+    </string-array>
+    
+    <string-array name="data_durations">
+        <item>Week</item>
+        <item>Month</item>
+        <item>½Year</item>
+        <item>Year</item>
+    </string-array>
+
+    <string-array name="data_finerDurations">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>½Year</item>
+        <item>Year</item>
+    </string-array>
+
+    <string-array name="graph_types">
+        <item>Bar Graph</item>
+        <item>Boxplot</item>
+    </string-array>
+
+    <string-array name="week_headers">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+    <string name="element_text">150</string>
+</resources>

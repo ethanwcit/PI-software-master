@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.1712962962962963" />
+        <entry key="..\:/Users/Bisesh/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_dropdown.xml" value="0.3675" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable-v23/ic_profile_details_box_with_arrow.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/circular.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_goals_book.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_goals_flame.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_goals_footstep.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_goals_footsteps.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_goals_moon.xml" value="0.244" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_profile_details_box.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_profile_details_box_large.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_profile_details_box_with_arrow.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/ic_round_arrow_back_48.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/pd_dropdown.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/drawable/shape.xml" value="0.2985" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/custom_spinner_dropdown_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/custom_spinner_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_feed.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_goals.xml" value="0.4" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_profile.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_profile_details.xml" value="0.4" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_settings.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_summary.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/fragment_trend.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/goal_card.xml" value="1.2" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/pd_custom_spinner_dropdown_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/layout/pd_custom_spinner_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Bisesh/Documents/CompSci/SPAM/Year 1/Coursework 1/PI-software/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/activity_main.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/custom_spinner_dropdown_item.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/custom_spinner_item.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/feed_row_item.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_correlation_graph.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_feed.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_goals.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_profile.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_profile_details.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_settings.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/fragment_trend.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/pd_custom_spinner_dropdown_item.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/Final/PI-software-master/app/src/main/res/layout/pd_custom_spinner_item.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/activity_main.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/custom_spinner_dropdown_item.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/custom_spinner_item.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_feed.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_goals.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_profile.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_profile_details.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_settings.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_summary.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/fragment_trend.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/pd_custom_spinner_dropdown_item.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/layout/pd_custom_spinner_item.xml" value="0.5240036231884058" />
+        <entry key="..\:/Users/samri/Documents/Coursework/PI project/last sprint/PI-software-front-end/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1955" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.194" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/feed_row_item.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_correlation_graph.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_feed.xml" value="0.1" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_goals.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_profile.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_profile_details.xml" value="0.10834088848594742" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_settings.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_summary.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/layout/fragment_trend.xml" value="0.25" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/menu/toolbar_menu_disabled.xml" value="0.1" />
+        <entry key="..\:/Users/yoshi/Documents/Code/PI-software/app/src/main/res/xml/provider_paths.xml" value="0.10199456029011786" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.211" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/feed_row_item.xml" value="0.3183673469387755" />
+        <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_summary.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_trend.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3098958333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,699 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam classAttributeIconSize 0
+
+
+abstract class androidx.appcompat.app.AppCompatActivity{
+    # {abstract} void onCreate(Bundle savedInstanceState)
+}
+
+abstract class com.google.android.material.bottomsheet.BottomSheetDialogFragment {
+    + {abstract} View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+}
+
+abstract class androidx.lifecycle.ViewModel {}
+
+abstract class androidx.fragment.app.Fragment {
+    + {abstract} View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
+    + void onViewCreated( View view, Bundle savedInstanceState)
+    + void onDestroyView()
+    + void onPause()
+    + void onResume()
+}
+
+abstract class androidx.constraintlayout.widget.ConstraintLayout {
+    # {abstract} void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+}
+
+abstract class RecyclerView.Adapter {
+    + {abstract} void onBindViewHolder(FeedAdapter.ViewHolder holder, int position)
+    + {abstract} int getItemCount()
+}
+
+abstract class androidx.viewpager2.adapter.FragmentStateAdapter {
+    + {abstract} Fragment createFragment(int position)
+    + {abstract} int getItemCount()
+}
+
+abstract class android.database.sqlite.SQLiteOpenHelper{
+    + {abstract} void onCreate(SQLiteDatabase db)
+    + {abstract} void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+}
+
+
+package com.group20.pi_software {
+    class MainActivity{
+        - {static} DataBaseHelper dataBaseHelper
+        - ActivityMainBinding binding
+
+        # void onCreate(Bundle savedInstanceState)
+        + ActivityMainBinding getBinding()
+        + {static} DataBaseHelper getDataBaseHelper()
+        + void setNightModeEnabled(boolean enabled)
+        - void configSettings()
+        - boolean getSetting(String tag)
+    }
+
+    package com.group20.pi_software.utility {
+        class ShareHelper {
+            + {static} File getScreenShot(View v)
+            + {static} void openShareThisApp(View v)
+        }
+    }
+
+    package com.group20.pi_software.model {
+        android.database.sqlite.SQLiteOpenHelper <|-l- DataBaseHelper
+        DataBaseHelper <.l. DataAnalyser
+        SleepModel <.u. DataAnalyser
+        StudyModel <.u. DataAnalyser
+        StepsModel <.u. DataAnalyser
+        ExerciseModel <.u. DataAnalyser
+        SleepModel <. DataBaseHelper
+        StudyModel <. DataBaseHelper
+        StepsModel <. DataBaseHelper
+        ExerciseModel <. DataBaseHelper
+        UserModel <.d.. DataBaseHelper
+    
+        class DataAnalyser {
+            + final {static} int DAY = 1
+            + final {static} int WEEK = 2
+            + final {static} int MONTH = 3
+            + final {static} int HALF_YEAR = 4
+            + final {static} int YEAR = 5
+        
+            + final {static} int SLEEP = 11
+            + final {static} int STUDY = 12
+            + final {static} int STEPS = 13
+            + final {static} int EXERCISE = 14
+            + final {static} int[] DATATYPES = {SLEEP, STUDY, STEPS, EXERCISE}
+        
+            + {static} Map<Integer, Map<Integer, Map<Integer, Map<Integer, List<StepsModel>>>>> splitStepsByDate(List<StepsModel> models)
+            + {static} Map<Integer, Map<Integer, Map<Integer, Map<Integer, List<ExerciseModel>>>>> splitExerciseByDate(List<ExerciseModel> models)
+            + {static} Map<Integer, Map<Integer, Map<Integer, Map<Integer, List<SleepModel>>>>> splitSleepByDate(List<SleepModel> models)
+            + {static} Map<Integer, Map<Integer, Map<Integer, Map<Integer, List<StudyModel>>>>> splitStudyByDate(List<StudyModel> models)
+            + {static} float average(Map<Integer, Float> values, Calendar pivot, int range)
+            + {static} int sumSteps(List<StepsModel> models)
+            + {static} float sumSleep(List<SleepModel> models)
+            + {static} float sumStudy(List<StudyModel> models)
+            + {static} float sumExercise(List<ExerciseModel> models)
+            + {static} float parseToHours(String duration)
+            + {static} String getRangeLabel(Calendar pivot, int range)
+            + {static} Map<Integer, Float> getBarGraphValues(int datatype, Calendar pivot, int range)
+            + {static} Map<Integer, Float[]> getCandleGraphValues(int datatype, Calendar pivot, int range)
+            + {static} Float[] getCorrelation(ArrayList<Float[]> values)
+        }
+        
+        class DataBaseHelper{
+            # {static} final String DATABASE_NAME = "user_data.db"
+        
+            # {static} final String USER_TABLE = "user"
+            # {static} final String COLUMN_ID = "id"
+            # {static} final String COLUMN_FIRST_NAME = "firstName"
+            # {static} final String COLUMN_EMAIL = "email"
+            # {static} final String COLUMN_DATE_JOINED = "dateJoined"
+            # {static} final String COLUMN_DATE_OF_BIRTH = "dateOfBirth"
+            # {static} final String COLUMN_PROFILE_PICTURE = "profilePicture"
+            # {static} final String COLUMN_WEIGHT = "weight"
+            # {static} final String COLUMN_HEIGHT = "height"
+            # {static} final String COLUMN_STEPS_GOAL = "stepsGoal"
+            # {static} final String COLUMN_EXERCISE_MINUTES_GOAL = "exerciseMinutesGoal"
+            # {static} final String COLUMN_STUDY_HOURS_GOAL = "studyHoursGoal"
+            # {static} final String COLUMN_SLEEP_HOURS_GOAL = "sleepHoursGoal"
+        
+            # {static} final String SLEEP_ID = "id"
+            # {static} final String SLEEP_TABLE = "sleep_table"
+            # {static} final String SLEEP_START_TIME = "startTime"
+            # {static} final String SLEEP_END_TIME = "endTime"
+            # {static} final String SLEEP_DATE = "sleepDate"
+        
+            # {static} final String EXERCISE_ID = "id"
+            # {static} final String EXERCISE_TABLE = "exercise_table"
+            # {static} final String EXERCISE_START_TIME = "startTime"
+            # {static} final String EXERCISE_END_TIME = "endTime"
+            # {static} final String EXERCISE_DATE = "exerciseDate"
+        
+            # {static} final String STUDY_ID = "id"
+            # {static} final String STUDY_TABLE = "study_table"
+            # {static} final String STUDY_DATE = "date"
+            # {static} final String STUDY_START_TIME = "startTime"
+            # {static} final String STUDY_END_TIME = "endTime"
+        
+            # {static} final String STEPS_TABLE = "steps_table"
+            # {static} final String STEPS_ID = "id"
+            # {static} final String STEPS_DATE = "date"
+            # {static} final String STEPS_TIME = "time"
+            # {static} final String STEPS_NUM = "stepsNo"
+        
+            + DataBaseHelper(Context context)
+            + void onCreate(SQLiteDatabase db)
+            + void clearDatabase(String TABLE_NAME)
+            + void clearAll()
+            + boolean addStudySession(StudyModel studyModel)
+            + boolean deleteStudySession(StudyModel studyModel)
+            + void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+            + boolean addStepsEntry(StepsModel stepsModel)
+            + boolean addSleepEntry(SleepModel sleepModel)
+            + boolean addExerciseEntry(ExerciseModel exerciseModel)
+            + List<StepsModel> getAllSteps()
+            + int getStepsToday()
+            + List<UserModel> getUser()
+            + List<SleepModel> getAllSleep()
+            + String getSleepToday()
+            + List<ExerciseModel> getAllExercise()
+            + String getExerciseToday()
+            + String getStudyToday()
+            + List<StudyModel> getAllStudy()
+            + boolean isUserEmpty()
+            + boolean addUser(UserModel userModel)
+            + boolean updateUser(UserModel userModel)
+            + boolean updateUserName(String name)
+            + String getUserName()
+            + boolean updateUserEmail(String email)
+            + String getUserEmail()
+            + boolean updateUserDateOfBirth(String dob)
+            + String getUserDateOfBirth()
+            + boolean updateUserHeight(Double height)
+            + Double getUserHeight()
+            + boolean updateUserWeight(Double weight)
+            + Double getUserWeight()
+            + boolean updateUserStepsGoal(int stepsNum)
+            + boolean updateUserExerciseGoal(int exHours)
+            + boolean updateUserStudyGoal(int studHours)
+            + boolean updateUserSleepGoal(int sleepHours)
+        }
+
+        class ExerciseModel {
+            - int id
+            - String date
+            - String startTime
+            - String endTime
+
+            + ExerciseModel(int id, String date, String startTime, String endTime)
+            + ExerciseModel()
+            + String toString()
+            + LocalDate getDateObj()
+            + int getId()
+            + void setId(int id)
+            + String getDate()
+            + void setDate(String date)
+            + String getStartTime()
+            + void setStartTime(String startTime)
+            + String getEndTime()
+            + void setEndTime(String endTime)
+            + LocalTime getStartTimeObj()
+            + LocalTime getEndTimeObj()
+            + double getExerciseTime()
+        }
+        
+        class SleepModel {
+            - int id
+            - String date
+            - String startTime
+            - String endTime
+        
+            + SleepModel(int id, String date, String startTime, String endTime)
+            + SleepModel()
+            + String toString()
+            + LocalDate getDateObj()
+            + int getId()
+            + void setId(int id)
+            + String getDate()
+            + void setDate(String date)
+            + String getStartTime()
+            + void setStartTime(String startTime)
+            + String getEndTime()
+            + void setEndTime(String endTime)
+            + LocalTime getStartTimeObj()
+            + LocalTime getEndTimeObj()
+            + double getSleepTime()
+        }
+        
+        class StepsModel {
+            - int id
+            - String date
+            - String time
+            - int steps
+        
+            + StepsModel(int id, String date, String time, int steps)
+            + StepsModel()
+            + String toString()
+            + int getId()
+            + void setId(int id)
+            + String getDate()
+            + void setDate(String date)
+            + String getTime() 
+            + void setTime(String time) 
+            + int getSteps()
+            + void setSteps(int steps)
+        }
+
+        class StudyModel {
+            - int id
+            - String date
+            - String startTime
+            - String endTime
+        
+            + StudyModel(int id, String date, String startTime, String endTime)
+            + String toString()
+            + LocalDate getDateObj()
+            + int getId()
+            + void setId(int id)
+            + String getDate()
+            + String getStartTime()
+            + String getEndTime()
+            + LocalTime getStartTimeObj()
+            + LocalTime getEndTimeObj()
+            + double getStudyTime()
+        }
+        
+        class UserModel{
+            - int id = 1
+            - String firstName
+            - String email
+            - String dateJoined
+            - String dateOfBirth
+            - String profilePicture
+            - double weight
+            - double height
+            - int stepsGoal
+            - int exerciseGoal
+            - double studyHoursGoal
+            - double sleepHoursGoal
+        
+            + UserModel(String firstName, String email, String dateJoined, String dateOfBirth, String profilePicture, double weight, double height, int stepsGoal, int exerciseGoal, double studyHoursGoal, double sleepHoursGoal)
+            + UserModel()
+            + String toString()
+            + String getFirstName() 
+            + void setFirstName(String firstName)
+            + String getEmail()
+            + void setEmail(String email)
+            + String getDateJoined()
+            + void setDateJoined(String dateJoined)
+            + String getDateOfBirth()
+            + void setDateOfBirth(String dateOfBirth)
+            + String getProfilePicture()
+            + void setProfilePicture(String profilePicture)
+            + double getWeight()
+            + void setWeight(double weight)
+            + double getHeight()
+            + void setHeight(int height)
+            + int getStepsGoal()
+            + void setStepsGoal(int stepsGoal)
+            + int getExerciseGoal()
+            + void setExerciseGoal(int exerciseGoal)
+            + double getStudyHoursGoal()
+            + void setStudyHoursGoal(double studyHoursGoal)
+            + double getSleepHoursGoal()
+            + void setSleepHoursGoal(double sleepHoursGoal)
+        }
+    }
+    
+    package com.group20.pi_software.ui {
+        package com.group20.pi_software.ui.bottomSheet {
+            com.google.android.material.bottomsheet.BottomSheetDialogFragment <|-u-- BottomSheetFragment
+            androidx.lifecycle.ViewModel <|-d----- BottomSheetViewModel
+            MainActivity <.. BottomSheetFragment
+            SleepModel <.d. BottomSheetFragment
+            StudyModel <.d. BottomSheetFragment
+            StepsModel <.d. BottomSheetFragment
+            ExerciseModel <.d. BottomSheetFragment
+            BottomSheetViewModel <.. BottomSheetFragment
+            
+            class BottomSheetFragment {
+                - BottomSheetViewModel bottomSheetViewModel
+                - FragmentBottomSheetBinding binding
+                - DateFormat dateFormat = new SimpleDateFormat("H:mm dd/MM/yyyy ")
+                
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                - void setupDatePicker(ConstraintLayout layout, EditText text, DatePicker picker, ImageButton button, TextView title)
+                - void setupTimePicker(ConstraintLayout layout, EditText text, TimePicker picker, ImageButton button, TextView title)
+            }
+
+            class BottomSheetViewModel{
+                + BottomSheetViewModel()
+            }
+        }
+
+        package com.group20.pi_software.ui.correlationGraph {
+            androidx.fragment.app.Fragment <|-u--- CorrelationGraphFragment
+            androidx.lifecycle.ViewModel <|-d----- CorrelationGraphViewModel
+            CorrelationGraphViewModel <.. CorrelationGraphFragment
+
+            class CorrelationGraphFragment{
+                - CorrelationGraphViewModel correlationGraphViewModel
+                - FragmentCorrelationGraphBinding binding
+                - String label
+                - Float[] regression
+                - List<Float[]> dataPoints
+
+                + {static} CorrelationGraphFragment newInstance(String label, ArrayList<Float[]> data)
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                - void formatGraph(LineChart chart, int textColor)
+                + void onDestroyView()
+            }
+
+            class CorrelationGraphViewModel {
+                + CorrelationGraphViewModel()
+            }
+        }
+
+        package com.group20.pi_software.ui.feed {
+            FeedAdapter +- ViewHolder
+            RecyclerView.Adapter <|-u-- FeedAdapter
+            RecyclerView.ViewHolder <|-u-- ViewHolder
+            androidx.fragment.app.Fragment <|-u--- FeedFragment
+            androidx.lifecycle.ViewModel <|-d----- FeedViewModel
+            MainActivity <.. FeedFragment
+            DataAnalyser <. FeedFragment
+            UserModel <.d. FeedFragment
+            FeedViewModel <.. FeedFragment
+            Feed_Class <. FeedFragment
+            FeedAdapter <. FeedFragment
+
+            class Feed_Class {
+                - String MainMessage
+                - String curr_time_date
+
+                + Feed_Class(String MainMessage, String curr_time_date)
+                + String getMainMessage()
+                + String getCurrTime()
+            }
+
+            class FeedAdapter{
+                - List<Feed_Class> mFeed_Class
+
+                + FeedAdapter(List<Feed_Class> feed_Class)
+                + FeedAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+                + void onBindViewHolder(FeedAdapter.ViewHolder holder, int position)
+                + int getItemCount()
+            }
+
+            class ViewHolder{
+                + TextView textmain
+                + TextView textdate
+
+                + ViewHolder(View itemView)
+            }
+
+            class FeedFragment {
+                - {static} ArrayList<Feed_Class> feed_class = new ArrayList<Feed_Class>()
+                - RecyclerView recyclerView
+                - String StepsToday
+                - String StudyToday
+                - String SleepToday
+                - String ExerciseToday
+                - int StepsGoal
+                - double StudyGoal
+                - double SleepGoal
+                - double ExerciseGoal
+                - int StepPer = 0
+                - double SleepPer = 0
+                - double StudyPer = 0
+                - double ExercisePer = 0
+                - DateFormat dateFormat = new SimpleDateFormat("H:mm dd/MM/yyyy ")
+
+                + {static} void addtoarr(String type, String data, String date)
+                + View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
+                + void reload()
+                + void onDestroyView()
+            }
+
+            class FeedViewModel{
+                - MutableLiveData<String> mText
+
+                + FeedViewModel()
+                + LiveData<String> getText()
+            }
+        }
+
+        package com.group20.pi_software.ui.goals {
+            androidx.fragment.app.Fragment <|-u--- GoalsFragment
+            androidx.lifecycle.ViewModel <|-d----- GoalsViewModel
+            MainActivity <.. GoalsFragment
+            Goals <. GoalsFragment
+            GoalsViewModel <.. GoalsFragment
+
+            class Goals {
+                - int stepCount, sleepHours, caloriesBurnt, studyHours
+
+                + Goals(int stepCount, int sleepHours, int caloriesBurnt, int studyHours)
+                + Goals(String stepCount, String sleepHours, String caloriesBurnt, String studyHours)
+                + int getSleepHours()
+                + void setSleepHours(int sleepHours)
+                + int getStepCount()
+                + void setStepCount(int stepCount)
+                + int getCaloriesBurnt()
+                + void setCaloriesBurnt(int caloriesBurnt)
+                + int getStudyHours()
+                + void setStudyHours(int studyHours)
+                + void setSleepHours(String sleepHours)
+                + void setStepCount(String stepCount)
+                + void setCaloriesBurnt(String caloriesBurnt)
+                + void setStudyHours(String studyHours)
+            }
+
+            class GoalsFragment {
+                - GoalsViewModel goalsViewModel
+                - FragmentGoalsBinding binding
+                - View root
+
+                - EditText stepsET, sleepET, activityET, studyET
+                - {static} Goals goals
+                - ColorfulRingProgressView progressBar
+
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+
+                - void setBottomNavigationViewEnabled(boolean enabled)
+                + void onDestroyView()
+                + Goals getGoals()
+                + {static} void setGoals(Goals newGoals)
+            }
+
+            class GoalsViewModel {
+                + GoalsViewModel()
+            }
+        }
+
+        package com.group20.pi_software.ui.profile {
+            androidx.fragment.app.Fragment <|-u--- ProfileFragment
+            androidx.lifecycle.ViewModel <|-d----- ProfileViewModel
+            MainActivity <.. ProfileFragment
+            ProfileViewModel <.. ProfileFragment
+
+            class ProfileFragment {
+                - ProfileViewModel profileViewModel
+                - FragmentProfileBinding binding
+
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                + void onDestroyView()
+            }
+
+            class ProfileViewModel {
+                - MutableLiveData<String> mText
+
+                + ProfileViewModel()
+                + LiveData<String> getText()
+            }
+        }
+
+        package com.group20.pi_software.ui.profileDetails {
+            ProfileDetailsFragment +- Component
+            androidx.fragment.app.Fragment <|-u--- ProfileDetailsFragment
+            androidx.lifecycle.ViewModel <|-d----- ProfileDetailsViewModel
+            MainActivity <.. ProfileDetailsFragment
+            ProfileDetailsViewModel <.. ProfileDetailsFragment
+
+            class ProfileDetailsFragment {
+                - ProfileDetailsViewModel profileDetailsViewModel
+                - FragmentProfileDetailsBinding binding
+                - View root
+
+                - static final String[] heightUnits = new String[] {"cm", "feet"}
+                + static final String[] weightUnits = new String[] {"lbs", "kg"}
+                - boolean pickerVisible = false
+                - enum DataType
+
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                - void setBottomNavigationViewEnabled(boolean enabled)
+                + void onDestroyView()
+                - void setEditTextListeners(Component component)
+                - void toggleDatePickerVisibility(EditText DoBText, ConstraintLayout DoBLayout)
+                - void displayStoredValues(Component component)
+                - void saveData(Component component)
+            }
+
+            class Component {
+                - final EditText editText
+                - final DataType dataType
+
+                + Component(EditText editText, DataType dataType)
+                + EditText getEditText()
+                + DataType getDataType()
+            }
+
+            class ProfileDetailsViewModel {
+                + ProfileDetailsViewModel()
+            }
+        }
+
+        package com.group20.pi_software.ui.settings {
+            androidx.fragment.app.Fragment <|-u--- SettingsFragment
+            androidx.lifecycle.ViewModel <|-d----- SettingsViewModel
+            MainActivity <.. SettingsFragment
+            SettingsViewModel <.. SettingsFragment
+
+           class SettingsFragment {
+                - SettingsViewModel settingsViewModel
+                - FragmentSettingsBinding binding
+                - View root
+
+                - int counter = 0
+                - Toast toast = null
+
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                - void setBottomNavigationViewEnabled(boolean enabled)
+                + void onDestroyView()
+                + void onPause()
+            }
+
+            class SettingsViewModel {
+                + SettingsViewModel()
+            }
+        }
+
+        package com.group20.pi_software.ui.summary {
+            androidx.constraintlayout.widget.ConstraintLayout <|-r SquareLayout
+            androidx.fragment.app.Fragment <|-u--- SummaryFragment
+            androidx.lifecycle.ViewModel <|-d----- SummaryViewModel
+            MainActivity <.. SummaryFragment
+            DataAnalyser <.d. SummaryFragment
+            DataBaseHelper <. SummaryFragment
+            UserModel <.d. SummaryFragment
+            SummaryViewModel <.. SummaryFragment
+
+            class SquareLayout {
+                + SquareLayout( Context context)
+                + SquareLayout( Context context, AttributeSet attrs)
+                + SquareLayout( Context context, AttributeSet attrs, int defStyleAttr)
+                + SquareLayout( Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+                # void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+            }
+
+            class SummaryFragment {
+                - SummaryViewModel summaryViewModel
+                - FragmentSummaryBinding binding
+
+                - ColorfulRingProgressView sleepRing
+                - ColorfulRingProgressView studyRing
+                - ColorfulRingProgressView stepsRing
+                - ColorfulRingProgressView workoutRing
+
+                - TextView sleepPercentage
+                - TextView studyPercentage
+                - TextView stepsPercentage
+                - TextView workoutPercentage
+
+                - TextView sleepSummaryText
+                - TextView studySummaryText
+                - TextView stepsSummaryText
+                - TextView workoutSummaryText
+
+                + View onCreateView( LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState)
+                + void reload()
+                + void onDestroyView()
+            }
+
+            class SummaryViewModel {
+                - MutableLiveData<String> mText
+
+                + SummaryViewModel()
+                + LiveData<String> getText()
+            }
+        }
+
+        package com.group20.pi_software.ui.trend {
+            androidx.viewpager2.adapter.FragmentStateAdapter <|-u-- GraphFragmentStatePagerAdapter
+            androidx.fragment.app.Fragment <|-u--- TrendFragment
+            androidx.lifecycle.ViewModel <|-d----- TrendViewModel
+            ShareHelper <.u. TrendFragment
+            MainActivity <.. TrendFragment
+            DataAnalyser <.d. TrendFragment
+            UserModel <.d. TrendFragment
+            GraphFragmentStatePagerAdapter <. TrendFragment
+            TrendViewModel <.. TrendFragment
+            
+            class GraphFragmentStatePagerAdapter {
+                - int size
+                - Object[] labels
+                - Map<String, ArrayList<Float[]>> data
+            
+                + GraphFragmentStatePagerAdapter(FragmentActivity fragmentActivity, int size, Map<String, ArrayList<Float[]>> map)
+                + Fragment createFragment(int position)
+                + int getItemCount()
+            }
+            
+            class TrendFragment {
+                - final int SLEEP = 1
+                - final int STUDY = 2
+                - final int STEPS = 3
+                - final int EXERCISE = 4
+                - final int[] dataTypes = {SLEEP, STUDY, STEPS, EXERCISE}
+            
+                - final int DAY = 11
+                - final int WEEK = 12
+                - final int MONTH = 13
+                - final int HALF_YEAR = 14
+                - final int YEAR = 15
+            
+                - final int[] durations = {DAY, WEEK, MONTH, HALF_YEAR, YEAR}
+            
+                - TrendViewModel trendViewModel
+                - FragmentTrendBinding binding
+                - Calendar pivot
+            
+                + View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                + void onViewCreated( View view, Bundle savedInstanceState)
+                - void configTrendCard(int dataType,
+                                              MultiStateToggleButton duration,
+                                             MultiStateToggleButton graphType,
+                                              CombinedChart bar,
+                                             CandleStickChart candle,
+                                             TextView average,
+                                             TextView range,
+                                             ImageButton before,
+                                             ImageButton after)
+                - CombinedData getBarData(Map<Integer, Float> values, float goal)
+                - CandleData getCandleData(Map<Integer, Float[]> values)
+                - void formatGraph(CombinedChart chart, String[] xValueLabels, int textColor)
+                - void formatGraph(CandleStickChart chart, String[] xValueLabels, int textColor, int dataType)
+                - void refreshBar(CombinedChart bar, int dataType, int d, float[] goals, TextView average, Calendar pivot)
+                - void refreshCandle(CandleStickChart candle, int dataType, int d, TextView average, Calendar pivot)
+                - Map<String, ArrayList<Float[]>> checkCorrelation()
+                + void onResume()
+                + void onDestroyView()
+            }
+
+            class TrendViewModel {
+                - MutableLiveData<String> mText
+
+                + TrendViewModel()
+                + LiveData<String> getText()
+            }
+        }
+
+        FeedFragment <. BottomSheetFragment
+        SummaryFragment <. BottomSheetFragment
+        BottomSheetFragment <. SummaryFragment
+        CorrelationFragment <. GraphFragmentStatePagerAdapter
+    }
+    
+    androidx.appcompat.app.AppCompatActivity <|-d- MainActivity
+    DataBaseHelper <.d.. MainActivity
+    UserModel <.d.. MainActivity
+    Goals <.u.. MainActivity
+    GoalsFragment <.u.. MainActivity
+}
+
+
+@enduml
